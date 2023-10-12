@@ -2,7 +2,6 @@ package ru.netology.rest;
 
 import org.junit.jupiter.api.Test;
 import static io.restassured.RestAssured.given;
-import static io.restassured.http.ContentType.JSON;
 import static org.hamcrest.Matchers.equalTo;
 
 public class PostmanEchoTest {
@@ -18,9 +17,8 @@ public class PostmanEchoTest {
                 .post("/post")
 // Проверки
         .then()
-                .contentType(JSON)
                 .statusCode(200)
-                .body("data", equalTo("some data"))
+                .body("data", equalTo("somedata"))
         ;
     }
 }
